@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b, #312e81);
+  color: white;
+  overflow: hidden;
+}
+
+/* AUTH */
+.authWrap {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    radial-gradient(circle at top left, rgba(139,92,246,0.35), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(236,72,153,0.25), transparent 35%),
+    #0f172a;
+}
+
+.authCard {
+  width: 420px;
+  padding: 35px;
+  border-radius: 24px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.35);
+  animation: fadeUp 0.5s ease;
+}
+
+.authCard h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.authCard input,
+.inputBar input {
+  width: 100%;
+  padding: 15px 18px;
+  margin: 12px 0;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  font-size: 15px;
+}
+
+.authCard input::placeholder,
+.inputBar input::placeholder {
+  color: rgba(255,255,255,0.65);
+}
+
+.authCard button,
+.inputBar button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.authCard button:hover,
+.inputBar button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(139,92,246,0.4);
+}
+
+/* CHAT */
+.chatPage {
+  display: flex;
+  height: 100vh;
+  background: #0f172a;
+}
+
+.sidebar {
+  width: 30%;
+  padding: 22px;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.userCard {
+  padding: 15px 18px;
+  margin-bottom: 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.25s;
+}
+
+.userCard:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateX(4px);
+}
+
+.userCard.active {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+}
+
+.chatArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatHeader {
+  padding: 22px;
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(20px);
+}
+
+.messages {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.msg {
+  max-width: 60%;
+  padding: 14px 18px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.4;
+  animation: fadeUp 0.25s ease;
+}
+
+.sent {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  border-bottom-right-radius: 6px;
+}
+
+.received {
+  align-self: flex-start;
+  background: rgba(255,255,255,0.08);
+  border-bottom-left-radius: 6px;
+}
+
+.typing {
+  font-size: 13px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.inputBar {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  background: rgba(255,255,255,0.03);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.inputBar input {
+  flex: 1;
+  margin: 0;
+}
+
+.inputBar button {
+  width: auto;
+  padding: 15px 24px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.emojiPicker {
+  position: absolute;
+  bottom: 90px;
+  right: 30px;
+  z-index: 999;
+}
+
+.fileUpload {
+  cursor: pointer;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+.sidebarTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.topBtns {
+  display: flex;
+  gap: 8px;
+}
+
+.topBtns button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(135deg,#8b5cf6,#ec4899);
+  color: white;
+}
+
+.groupCard {
+  border-left: 4px solid #22c55e;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.groupModal {
+  width: 400px;
+  padding: 24px;
+  border-radius: 20px;
+  background: #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.groupModal input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+.searchResults {
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.searchUser {
+  padding: 10px;
+  border-radius: 10px;
+  background: #374151;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.searchUser:hover {
+  background: #4b5563;
+}
+.groupMembersText {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
